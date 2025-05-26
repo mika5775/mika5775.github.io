@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Автотехцентр - качественный ремонт и обслуживание вашего автомобиля</title>
+    <meta name="description" content="Профессиональный автосервис - качественный ремонт и обслуживание вашего автомобиля">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .mn-nav-site {
+            background-color: #222;
+            color: white;
+        }
+        
+        .mn-contacts {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        
+        .mn-contacts address, 
+        .mn-contacts a {
+            color: white;
+            margin-bottom: 0;
+        }
+        
+        .mn-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .mn-link {
+            color: white !important;
+            padding: 10px 15px !important;
+        }
+        
+        .mn-link:hover {
+            color: #ff6b00 !important;
+        }
+        
+        .mn-btn {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+        
+        .mn-btn:hover {
+            background-color: #e05d00;
+            color: white;
+        }
+        
+        /* Секция с формой */
+        .mn-header-website {
+            position: relative;
+            padding: 100px 0;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .mn-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .mn-text {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .mn-card-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        .mn-titleForm {
+            color: white;
+            margin-bottom: 25px;
+        }
+        
+        .mn-label {
+            color: rgb(144, 144, 144);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .mn-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgb(57, 57, 57);
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .mn-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .mn-form-tip {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        /* Секция преимуществ */
+        .mn-infographics-site {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .feature-block-four {
+            background: white;
+            border-radius: 10px;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-block-four:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .inner-box {
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        /* Секция "О нас" */
+        .mn-text-img {
+            padding: 80px 0;
+        }
+        
+        .frame {
+            position: relative;
+            padding: 20px;
+        }
+        
+        .frame img {
+            position: relative;
+            z-index: 2;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .frame > span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #313131;
+            border-radius: 10px;
+            z-index: 1;
+            transform: translate(10px, 10px);
+        }
+        
+        /* Секция услуг */
+        .mn-cards-h {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .mn-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .mn-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mn-icon {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .iconbox-content {
+            padding: 20px;
+        }
+        
+        .mn-title-card {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .mn-text-card {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .ud-btn {
+            display: inline-flex;
+            align-items: center;
+            color: #ff6b00;
+            font-weight: 500;
+        }
+        
+        .ud-btn svg {
+            margin-left: 5px;
+        }
+        
+        /* Галерея работ */
+        .mn-carousel-gallery {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .mn-figure {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .mn-figure a {
+            display: block;
+            height: 0;
+            padding-bottom: 60%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .mn-figure h3 {
+            font-size: 18px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        /* Контакты */
+        .mn-contact-form {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .mn-contact-left {
+            background-color: #222;
+            color: white;
+            height: 100%;
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .mn-contact-right {
+            background-color: #f8f9fa;
+            height: 100%;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .mn-contact-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .mn-contact-text {
+            margin-bottom: 5px;
+        }
+        
+        .mn-contact-link {
+            color: #ff6b00;
+            text-decoration: none;
+        }
+        
+        /* Футер */
+        .mn-footer {
+            padding: 30px 0;
+            background-color: #222;
+            color: white;
+        }
+        
+        .mn-footer a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .mn-footer a:hover {
+            color: white;
+        }
+        
+        .mn-matronet {
+            color: #ff6b00 !important;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 991.98px) {
+            .mn-contact-left,
+            .mn-contact-right {
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .mn-header-website {
+                padding: 60px 0;
+            }
+            
+            .mn-title {
+                font-size: 28px;
+            }
+            
+            .mn-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка с контактами -->
+    <header class="wrapper mn-nav-site" id="nav-site">
+        <div class="fs-15 d-none d-md-block mn-contacts">
+            <div class="container d-md-flex flex-md-row">
+                <div class="d-flex flex-row align-items-center">
+                    <div class="icon text-white fs-22 mt-1 me-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <address class="mb-0">Москва, улица Трубная, 8</address>
+                </div>
+                <div class="d-flex flex-row align-items-center me-6 ms-auto mt-1 mt-lg-0">
+                    <div class="icon text-white fs-22 mt-1 me-2">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <a class="mn-phone" style="text-decoration: none;" href="tel:8 800 500 00 00">8 800 500 00 00</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Основное меню -->
+        <nav class="navbar navbar-expand-lg center-nav transparent navbar-light mn-page-header">
+            <div class="container flex-lg-row flex-nowrap align-items-center">
+                <a href="index.html" class="navbar-brand w-100 mn-logo">
+                    Car Service
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="offcanvas offcanvas-nav offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+                    <div class="offcanvas-header d-lg-none">
+                        <h3 class="text-white fs-30 mb-0">Car Service</h3>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link mn-link" href="#text-img">О нас</a></li>
+                            <li class="nav-item"><a class="nav-link mn-link" href="#cards-h">Услуги</a></li>
+                            <li class="nav-item"><a class="nav-link mn-link" href="#carousel-gallery">Наша работа</a></li>
+                            <li class="nav-item"><a class="nav-link mn-link" href="#contact-form">Контакты</a></li>
+                        </ul>
+                        <div class="offcanvas-footer d-lg-none">
+                            <div>
+                                <button type="button" class="btn mn-btn" data-bs-toggle="modal" data-bs-target="#callback-order-modal">
+                                    Заказать звонок
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="navbar-other w-100 d-flex ms-auto">
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <li class="nav-item d-none d-md-block">
+                            <button type="button" class="btn mn-btn" data-bs-toggle="modal" data-bs-target="#callback-order-modal">
+                                Заказать звонок
+                            </button>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <button class="hamburger offcanvas-nav-btn ms-3"><span></span></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Модальное окно обратного звонка -->
+        <div class="modal fade" id="callback-order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content mn-modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Заказ обратного звонка
+                        </h5>
+                        <button type="button" class="btn close" style="color:#5d5d5d" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name-top-header-form" class="col-form-label">Ваше имя:</label>
+                                <input type="text" class="form-control mn-modal-input" id="name-top-header-form">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone-top-header-form" class="col-form-label">Ваш телефон:</label>
+                                <input type="text" class="form-control mn-modal-input" id="phone-top-header-form" placeholder="+7 (___) ___-____">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <div class="mn-modal-text" style="font-size: 12px; line-height: 1.1; max-width: 310px;">
+                            * Нажимая на кнопку, вы выражаете согласие с политикой конфиденциальности и правилами обработки персональных данных
+                        </div>
+                        <button type="button" class="btn mn-modal-btn" id="send-btn-top-header-form">Отправить</button>
+                    </div>
+                    <div class="mn-message-sent rounded" id="box-message-top-header-form">
+                        Сообщение отправлено!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Основная секция с формой -->
+    <section class="mn-header-website" id="header-website">
+        <div class="container position-relative z-2">
+            <div class="row pt-xl-3 pt-xxl-4">
+                <div class="col-lg-7 col-xxl-6">
+                    <h1 class="text-center text-lg-start mb-4 mb-lg-0 mn-title">
+                        <span class="mn-text-title">Car Service</span> профессиональный автосервис с гарантией качества
+                    </h1>
+                </div>
+                <div class="col-lg-5 offset-xxl-1 pt-sm-3">
+                    <div class="text-center text-lg-start pb-3 pb-sm-0 pb-md-2 mb-4 mb-sm-5 mn-text">
+                        <p>Заполните форму ниже, и мы свяжемся с вами в кратчайшие сроки для обсуждения всех деталей.</p>
+                    </div>
+                    <div class="card mn-card-form position-relative overflow-hidden">
+                        <form class="card-body" id="form-sign-service" method="post" novalidate="">
+                            <h2 class="h3 card-title text-center pb-2 pb-xxl-4 mn-titleForm">
+                                Запись в автосервис
+                            </h2>
+                            <div class="mb-3">
+                                <label class="form-label fs-base mn-label" for="message-sign-service">
+                                    Что требуется сделать
+                                </label>
+                                <textarea name="message" id="message-sign-service" class="form-control mn-input" placeholder="Здесь можно описать проблему с Вашим автомобилем" rows="4" required="" aria-required="true"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fs-base mn-label" for="name-sign-service">
+                                    Ваше имя
+                                </label>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control mn-input" placeholder="Ваше имя" id="name-sign-service" required="" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fs-base mn-label" for="phone-sign-service">
+                                    Ваш телефон / e-mail
+                                </label>
+                                <div class="d-flex">
+                                    <div class="input-group me-2 me-lg-3">
+                                        <input type="text" class="form-control mn-input" placeholder="Ваш телефон" id="phone-sign-service" required="" aria-required="true">
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control mn-input" placeholder="Ваш e-mail" id="email-sign-service">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column flex-sm-row flex-lg-column flex-xxl-row align-items-center justify-content-center justify-content-lg-start pt-3 pt-xxl-4">
+                                <button class="btn btn-light w-100 w-sm-auto w-lg-100 w-xxl-auto mb-2 mb-sm-0 mb-lg-2 mb-xxl-0 mn-btn" type="submit" id="btn-sign-service">ЗАПИСАТЬСЯ В АВТОСЕРВИС</button>
+                            </div>
+                            <div class="pt-3 mn-form-tip">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Нажимая на кнопку, вы выражаете согласие с политикой конфиденциальности и правилами обработки персональных данных
+                            </div>
+                        </form>
+                        <div class="mn-message-sent rounded" id="box-message-sign-service">
+                            Сообщение отправлено!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Фоновое изображение -->
+        <div class="jarallax" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+            <div class="jarallax-img" style="background-image: url('https://www.drivencarguide.co.nz/media/d0nnnv1g/bmw_m5_limousine-0018.jpg?width=1028&quality=85&v=1dac844851ca7f0'); background-size: cover; background-position: center; opacity: 1; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; object-fit: cover;"></div>
+        </div>
+    </section>
+    
+    <!-- Секция преимуществ -->
+    <section class="mn-infographics-site" id="infographics-site">
+        <div class="container">
+            <div class="feature-four px-3 px-lg-2">
+                <div class="row clearfix" style="overflow: hidden; border-radius: 20px;">
+                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                        <div class="feature-block-four">
+                            <div class="inner-box p_relative d_block pt_50 pr_30 pb_45 pl_30 text-center">
+                                <div class="hover-curve"></div>
+                                <div class="icon-box p_relative d_iblock w_100 h_100 lh_100 text-center b_radius_50 fs_50 mb_25">
+                                    <div class="icon">
+                                        <i class="fas fa-bolt fa-2x"></i>
+                                    </div>
+                                </div>
+                                <h4 class="d_block fs_20 lh_30 fw_bold mb_15 mn-title">Экспресс-обслуживание</h4>
+                                <p class="d_block mn-text">Мы предоставляем быстрые и эффективные услуги, чтобы минимизировать время простоя вашего автомобиля.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                        <div class="feature-block-four">
+                            <div class="inner-box p_relative d_block pt_50 pr_30 pb_45 pl_30 text-center">
+                                <div class="hover-curve"></div>
+                                <div class="icon-box p_relative d_iblock w_100 h_100 lh_100 text-center b_radius_50 fs_50 mb_25">
+                                    <div class="icon">
+                                        <i class="fas fa-shield-alt fa-2x"></i>
+                                    </div>
+                                </div>
+                                <h4 class="d_block fs_20 lh_30 fw_bold mb_15 mn-title">Гарантия на работы</h4>
+                                <p class="d_block mn-text">Мы уверены в качестве нашей работы и предоставляем гарантию на все проведенные работы.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                        <div class="feature-block-four">
+                            <div class="inner-box p_relative d_block pt_50 pr_30 pb_45 pl_30 text-center">
+                                <div class="hover-curve"></div>
+                                <div class="icon-box p_relative d_iblock w_100 h_100 lh_100 text-center b_radius_50 fs_50 mb_25">
+                                    <div class="icon">
+                                        <i class="fas fa-user-tie fa-2x"></i>
+                                    </div>
+                                </div>
+                                <h4 class="d_block fs_20 lh_30 fw_bold mb_15 mn-title">Профессионализм</h4>
+                                <p class="d_block mn-text">Наши профессионалы обладают высоким уровнем знаний и опыта, гарантируя качественный ремонт вашего автомобиля.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "О нас" -->
+    <section class="mn-text-img" id="text-img">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="frame">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="img-fluid mn-img" alt="Наш автосервис">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-5">
+                    <h2 class="mn-title">
+                        Автосервис «Car Service»
+                    </h2>
+                    <div class="mn-text">
+                        <p><strong>Наш автосервис</strong>&nbsp;- это место, где ваш автомобиль получит максимальный уход и внимание от опытных профессионалов. Мы специализируемся на обслуживании и ремонте любых марок и моделей автомобилей, обеспечивая высочайший уровень сервиса с использованием только качественных запчастей и материалов. Наши мастера постоянно совершенствуют свои навыки и следят за последними технологическими новинками, чтобы гарантировать оптимальное состояние вашего транспортного средства.</p>
+                        <p>Приходите к нам, и вы убедитесь в нашей преданности качеству и профессионализму в каждой детали работы!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция услуг -->
+    <section class="mn-cards-h" id="cards-h">
+        <div class="position-relative mx-auto maxw1600 mn-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="main-title text-center">
+                            <h2 class="mn-title">
+                                Услуги автосервиса
+                            </h2>
+                            <p class="mn-subtitle">
+                                Гарантируем высокое качество и сроки работ.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gy-3 gy-lg-4">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="text-center h-100 mn-card">
+                            <div>
+                                <img class="mn-icon w-100" src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Техническое обслуживание">
+                            </div>
+                            <div class="iconbox-content">
+                                <h4 class="mn-title-card">
+                                    Техническое обслуживание
+                                </h4>
+                                <p class="mn-text-card">
+                                    Комплексная проверка и обслуживание всех систем и узлов автомобиля, включая замену масла, фильтров и осмотр тормозной системы.
+                                </p>
+                                <a href="#" class="ud-btn mn-btn" data-bs-toggle="modal" data-bs-target="#serviceModal1">
+                                    Подробнее
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="text-center h-100 mn-card">
+                            <div>
+                                <img class="mn-icon w-100" src="https://images.unsplash.com/photo-1558640476-437a2b943732?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Шиномонтаж">
+                            </div>
+                            <div class="iconbox-content">
+                                <h4 class="mn-title-card">
+                                    Шиномонтаж и балансировка
+                                </h4>
+                                <p class="mn-text-card">
+                                    Установка и балансировка колес для обеспечения плавности хода и безопасности вождения.
+                                </p>
+                                <a href="#" class="ud-btn mn-btn" data-bs-toggle="modal" data-bs-target="#serviceModal2">
+                                    Подробнее
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="text-center h-100 mn-card">
+                            <div>
+                                <img class="mn-icon w-100" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Диагностика">
+                            </div>
+                            <div class="iconbox-content">
+                                <h4 class="mn-title-card">
+                                    Диагностика двигателя
+                                </h4>
+                                <p class="mn-text-card">
+                                    Проведение компьютерной диагностики двигателя для выявления и устранения неисправностей.
+                                </p>
+                                <a href="#" class="ud-btn mn-btn" data-bs-toggle="modal" data-bs-target="#serviceModal3">
+                                    Подробнее
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Модальные окна услуг -->
+    <div class="modal fade" id="serviceModal1" tabindex="-1" role="dialog" aria-labelledby="serviceModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal1Label">Техническое обслуживание</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-100 mb-4 rounded" alt="Техническое обслуживание">
+                    <p>Наш автосервис предлагает комплексное техническое обслуживание, чтобы гарантировать надежную и безопасную работу вашего автомобиля. Регулярное ТО позволяет своевременно выявлять и устранять потенциальные проблемы, продлевая срок службы вашего транспортного средства.</p>
+                    <h5>Что включает в себя услуга?</h5>
+                    <ul>
+                        <li>Диагностика автомобиля</li>
+                        <li>Замена масла и фильтров</li>
+                        <li>Проверка и замена жидкости</li>
+                        <li>Проверка тормозной системы</li>
+                        <li>Осмотр подвески и рулевого управления</li>
+                        <li>Проверка шин</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#callback-order-modal">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="serviceModal2" tabindex="-1" role="dialog" aria-labelledby="serviceModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal2Label">Шиномонтаж и балансировка</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1558640476-437a2b943732?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-100 mb-4 rounded" alt="Шиномонтаж">
+                    <p>Наш автосервис предлагает профессиональные услуги шиномонтажа и балансировки, которые обеспечат вашему автомобилю безопасность и комфорт на дороге.</p>
+                    <h5>Что включает в себя услуга?</h5>
+                    <ul>
+                        <li>Снятие и установка шин</li>
+                        <li>Балансировка колес</li>
+                        <li>Проверка состояния шин</li>
+                        <li>Сохранение данных</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#callback-order-modal">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="serviceModal3" tabindex="-1" role="dialog" aria-labelledby="serviceModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceModal3Label">Диагностика двигателя</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-100 mb-4 rounded" alt="Диагностика">
+                    <p>Наша услуга по диагностике двигателя поможет вам выявить потенциальные проблемы на ранней стадии и обеспечить оптимальное функционирование вашего автомобиля. Профессиональная диагностика позволяет избежать серьезных поломок и продлить срок службы двигателя.</p>
+                    <h5>Что включает в себя услуга?</h5>
+                    <ul>
+                        <li>Компьютерная диагностика</li>
+                        <li>Проверка работы двигателя</li>
+                        <li>Осмотр внешних компонентов</li>
+                        <li>Анализ системы впрыска и зажигания</li>
+                        <li>Проверка уровня и состояния масла</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#callback-order-modal">Записаться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Галерея работ -->
+    <section class="mn-carousel-gallery" id="carousel-gallery">
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-md-10 col-lg-8">
+                    <div id="worksCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="position-relative">
+                                    <figure class="media media-image equal-16-10 mn-figure">
+                                        <a style="background-image: url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); display: block; height: 0; padding-bottom: 60%; background-size: cover; background-position: center;"></a>
+                                    </figure>
+                                    <h3 class="mn-text" data-bs-toggle="modal" data-bs-target="#workModal1">
+                                        Полная замена масла для флота
+                                        <i class="fas fa-arrow-right-circle ms-2"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="position-relative">
+                                    <figure class="media media-image equal-16-10 mn-figure">
+                                        <a style="background-image: url('https://images.unsplash.com/photo-1494976388901-7509ad593dad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'); display: block; height: 0; padding-bottom: 60%; background-size: cover; background-position: center;"></a>
+                                    </figure>
+                                    <h3 class="mn-text" data-bs-toggle="modal" data-bs-target="#workModal2">
+                                        Эстетическое обновление автомобиля
+                                        <i class="fas fa-arrow-right-circle ms-2"></i>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#worksCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#worksCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Модальные окна работ -->
+    <div class="modal fade" id="workModal1" tabindex="-1" role="dialog" aria-labelledby="workModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="workModal1Label">Полная замена масла для флота</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-100 mb-4 rounded" alt="Замена масла">
+                    <p>В рамках работы с крупным клиентом – автопарком такси, была проведена полномасштабная замена масла на 50 автомобилях. Мы организовали выездной сервис, что позволило минимизировать простой автомобилей и обеспечить быстрое обслуживание во время пробных поездок.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="workModal2" tabindex="-1" role="dialog" aria-labelledby="workModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="workModal2Label">Эстетическое обновление автомобиля</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1494976388901-7509ad593dad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="w-100 mb-4 rounded" alt="Обновление автомобиля">
+                    <p>Клиент решил освежить внешний вид своего авто. Мы провели полировку, защиту кузова керамическим составом и обновление салона. Результат превзошел ожидания клиента, и он стал постоянным заказчиком наших услуг.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Секция контактов -->
+    <section class="page-section mn-contact-form" id="contact-form">
+        <div class="container position-relative">
+            <div class="row mb-4 mb-md-5">
+                <div class="col-md-5">
+                    <h2 class="section-title-large font-alt uppercase mb-3 mb-sm-3 mn-title">
+                        Контакты
+                    </h2>
+                </div>
+                <div class="col-md-7">
+                    <p class="section-descr-large mb-0 mn-text">
+                        Оставьте заявку для консультации и записи на сервисное обслуживание вашего автомобиля!
+                    </p>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-5 d-flex align-items-stretch mb-4 mb-lg-0">
+                    <div class="contact-1-left light-content mn-contact-left">
+                        <div class="p-4 p-md-5">
+                            <h3 class="contact-1-title mn-contact-title">Телефон</h3>
+                            <div class="contact-1-text mn-contact-text">
+                                8 800 500 00 00
+                            </div>
+                            <div class="contact-1-link">
+                                <a href="tel:8 800 500 00 00" class="mn-contact-link">Позвонить сейчас</a>
+                            </div>
+                        </div>
+                        <hr class="contact-1-line mt-0 mb-0">
+                        <div class="p-4 p-md-5">
+                            <h3 class="contact-1-title mn-contact-title">Адрес</h3>
+                            <div class="contact-1-text mn-contact-text">
+                                Москва, улица Трубная, 8
+                            </div>
+                            <div class="contact-1-link">
+                                <a href="https://yandex.ru/maps/-/CDua7DKt" class="mn-contact-link" target="_blank">Открыть карту</a>
+                            </div>
+                        </div>
+                        <hr class="contact-1-line mt-0 mb-0">
+                        <div class="p-4 p-md-5">
+                            <h3 class="contact-1-title mn-contact-title">E-mail</h3>
+                            <div class="contact-1-text text-break mn-contact-text">
+                                contact@MyCompany.com
+                            </div>
+                            <div class="contact-1-link">
+                                <a href="mailto:contact@MyCompany.com" class="mn-contact-link">Написать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 d-flex align-items-stretch">
+                    <div class="contact-1-right p-4 p-md-5 mn-contact-right">
+                        <form class="form contact-form needs-validation" method="post" novalidate="">
+                            <div class="form-group">
+                                <label class="mn-label" for="name-user">Имя</label>
+                                <input type="text" id="name-user" class="input-lg input-circle form-control mn-input" placeholder="Введите ваше имя" required="" aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label class="mn-label" for="phone-user">Телефон</label>
+                                <input type="text" id="phone-user" class="input-lg input-circle form-control mn-input" placeholder="Введите ваш телефон" required="">
+                            </div>
+                            <div class="form-group">
+                                <label class="mn-label" for="message-user">Сообщение</label>
+                                <textarea id="message-user" class="input-lg input-circle form-control mn-input" style="height: 120px;" placeholder="Введите ваше сообщение" required=""></textarea>
+                            </div>
+                            <div class="mt-4">
+                                <button class="submit_btn btn btn-mod btn-large btn-circle btn-hover-anim btn-full mn-btn" id="btn-message">
+                                    <span>Отправить сообщение</span>
+                                </button>
+                            </div>
+                            <div class="form-tip pt-3 mn-form-tip">
+                                <i class="fas fa-info-circle me-2"></i>
+                                Нажимая на кнопку, вы выражаете согласие с политикой конфиденциальности и правилами обработки персональных данных
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Кнопка WhatsApp -->
+    <a class="w-btn mobile-text-n" href="https://api.whatsapp.com/send?phone=70000000000" style="position: fixed; bottom: 50px; left: 50px; background: #25D366; color: rgb(0, 0, 0); padding: 12px 20px; border-radius: 50px; display: flex; align-items: center; z-index: 1000; text-decoration: none;">
+        <i class="fab fa-whatsapp me-2" style="font-size: 24px;"></i>
+        <span>Консультация по <span>WhatsApp</span></span>
+    </a>
+    
+    <!-- Футер -->
+    <footer class="mn-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 mn-text">
+                    © Все права защищены | <a href="https://matronet.com/" class="mn-matronet" style="text-decoration:underline" target="_blank">Работает на MatroNet</a>
+                </div>
+                <div class="col-sm-7 d-flex justify-content-start justify-content-sm-end">
+                    <ul class="footer-menu m-0 p-0">
+                        <li><a class="text-decoration-none px-0 pe-1 px-lg-2 pe-lg-2 mn-link" href="#text-img">О нас</a></li>
+                        <li><a class="text-decoration-none px-0 pe-1 px-lg-2 pe-lg-2 mn-link" href="#cards-h">Услуги</a></li>
+                        <li><a class="text-decoration-none px-0 pe-1 px-lg-2 pe-lg-2 mn-link" href="#carousel-gallery">Наша работа</a></li>
+                        <li><a class="text-decoration-none px-0 pe-1 px-lg-2 pe-lg-2 mn-link" href="#contact-form">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Маска для телефона
+            $('#phone-sign-service, #phone-user, #phone-top-header-form').mask('+7 (000) 000-0000');
+            
+            // Отправка формы записи
+            $('#form-sign-service').on('submit', function(e) {
+                e.preventDefault();
+                $('#box-message-sign-service').fadeIn().delay(3000).fadeOut();
+                $(this).trigger('reset');
+            });
+            
+            // Отправка формы обратного звонка
+            $('#callback-order-modal form').on('submit', function(e) {
+                e.preventDefault();
+                $('#box-message-top-header-form').fadeIn().delay(3000).fadeOut();
+                $(this).trigger('reset');
+                $('#callback-order-modal').modal('hide');
+            });
+            
+            // Отправка формы контактов
+            $('.contact-form').on('submit', function(e) {
+                e.preventDefault();
+                $('#sending-messages').removeClass('d-none').delay(3000).queue(function() {
+                    $(this).addClass('d-none').dequeue();
+                });
+                $(this).trigger('reset');
+            });
+            
+            // Плавная прокрутка
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>
