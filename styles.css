@@ -1,0 +1,328 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.mn-nav-site {
+    background-color: #222;
+    color: white;
+}
+
+.mn-contacts {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.mn-contacts address, 
+.mn-contacts a {
+    color: white;
+    margin-bottom: 0;
+}
+
+.mn-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.mn-link {
+    color: white !important;
+    padding: 10px 15px !important;
+}
+
+.mn-link:hover {
+    color: #ff6b00 !important;
+}
+
+.mn-btn {
+    background-color: #ff6b00;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.mn-btn:hover {
+    background-color: #e05d00;
+    color: white;
+}
+
+/* Секция с формой */
+.mn-header-website {
+    position: relative;
+    padding: 100px 0;
+    color: white;
+    overflow: hidden;
+}
+
+.mn-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mn-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.mn-card-form {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.mn-titleForm {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.mn-label {
+    color: rgb(144, 144, 144);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.mn-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(57, 57, 57);
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.mn-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.mn-form-tip {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+/* Секция преимуществ */
+.mn-infographics-site {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.feature-block-four {
+    background: white;
+    border-radius: 10px;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-block-four:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.inner-box {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 107, 0, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Секция "О нас" */
+.mn-text-img {
+    padding: 80px 0;
+}
+
+.frame {
+    position: relative;
+    padding: 20px;
+}
+
+.frame img {
+    position: relative;
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.frame > span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #313131;
+    border-radius: 10px;
+    z-index: 1;
+    transform: translate(10px, 10px);
+}
+
+/* Секция услуг */
+.mn-cards-h {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.mn-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.mn-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mn-icon {
+    height: 200px;
+    object-fit: cover;
+}
+
+.iconbox-content {
+    padding: 20px;
+}
+
+.mn-title-card {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.mn-text-card {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.ud-btn {
+    display: inline-flex;
+    align-items: center;
+    color: #ff6b00;
+    font-weight: 500;
+}
+
+.ud-btn svg {
+    margin-left: 5px;
+}
+
+/* Галерея работ */
+.mn-carousel-gallery {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.mn-figure {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.mn-figure a {
+    display: block;
+    height: 0;
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center;
+}
+
+.mn-figure h3 {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Контакты */
+.mn-contact-form {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.mn-contact-left {
+    background-color: #222;
+    color: white;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+.mn-contact-right {
+    background-color: #f8f9fa;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+.mn-contact-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.mn-contact-text {
+    margin-bottom: 5px;
+}
+
+.mn-contact-link {
+    color: #ff6b00;
+    text-decoration: none;
+}
+
+/* Футер */
+.mn-footer {
+    padding: 30px 0;
+    background-color: #222;
+    color: white;
+}
+
+.mn-footer a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mn-footer a:hover {
+    color: white;
+}
+
+.mn-matronet {
+    color: #ff6b00 !important;
+}
+
+/* Адаптивность */
+@media (max-width: 991.98px) {
+    .mn-contact-left,
+    .mn-contact-right {
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .mn-header-website {
+        padding: 60px 0;
+    }
+
+    .mn-title {
+        font-size: 28px;
+    }
+
+    .mn-text {
+        font-size: 16px;
+    }
+}
