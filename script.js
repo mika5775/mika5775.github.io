@@ -29,7 +29,7 @@ $(document).ready(function() {
     // Плавная прокрутка
     $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
-        var target = $(this).attr('href');
+        const target = $(this).attr('href');
         $('html, body').animate({
             scrollTop: $(target).offset().top - 80
         }, 800);
